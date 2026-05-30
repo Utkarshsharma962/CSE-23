@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>functions</title>
+</head>
+<body>
+    <script>
+        //block of codes used or defined to perform specific task
+        //types of functions:- 
+        //normal functions: with para,without para,and with default--both synchronous and non-synchronous
+
+        // normal function without parameters..
+
+        function demo1(text){         //function defining...
+         console.log("hello js " + text);
+
+        }
+        demo1("react");//function calling
+        //default
+        function add(a,b){
+            console.log("addition is "+ (a+b));
+        }
+        add(123,123);
+//      Synchronous and Asynchronous Communication in Programming
+// Synchronous communication in web development refers to operations that execute sequentially,
+//  meaning the program waits for each task to complete before moving to the next. 
+//  This approach is simple to reason about but can lead to performance bottlenecks, 
+//  as the entire program halts until the current operation finishes. 
+//  Asynchronous communication, on the other hand, allows tasks to run independently
+//   without blocking the main program flow, making it more efficient and responsive.
+// Asynchronous operations often use callbacks, promises, or async/await to handle
+//  delayed results, allowing other code to run while waiting for the async task to complete.  -->
+
+// function cal(){
+//     function add(a,b){
+//         console.log("addition is " + (a+b));
+//     }
+//     function mul(x,y){
+//         console.log("multipliaction " +  (x*y));
+//     }
+//     add(3,5)
+//     mul(3,5)
+  
+
+// }
+// cal();
+//short code for above function i.e. arrow function
+// let msg1=() => console.log("hello abes ec");
+// msg1();
+// arrow function using multiple line  
+// let msg2=(a,b)=>{
+//     var num1=a;
+//     var num2=b;
+//     var res=num1/num2;
+//     console.log("result is " + res);
+// }
+
+// msg2(10,20);
+
+//IIFE-An IIFE (Immediately Invoked Function Expression) in JavaScript is a function that is defined and executed immediately after its creation.
+// It’s often used to create a private scope and avoid polluting the global namespace.
+
+// (FUNCTION(){
+//     console.log("hello world")
+// })();
+// //shortcut method
+// (msg=> console.log("hello"))();
+
+let myPromise=new Promise(function(rejected,resolved){
+let age=25;
+if(age>=18){
+    resolve("valid age");
+}
+else{
+    reject("wait for next year");
+}
+});
+myPromise
+.then(msg=>console.log(msg))
+.catch(error=>console.log(error));
+console.log(myPromise);
+
+async function userInfo(){
+    try{
+    let userData=await fetch('https://dummyjson.com/products');
+    let response=await userData.json();
+    Console.log(response);
+}
+catch(error){
+    console.log(error);
+}}
+userInfo();
+
+
+</script>
+
+
+</body>
+</html>
